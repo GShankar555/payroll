@@ -6,6 +6,11 @@ pay_weekend=0
 days={'Sunday':0,'Monday':1,'Tuesday':2,'Wednesday':3,'Thursday':4,'Friday':5,'Saturday':6}
 for i,j in days.items():
     hours[j]=int(input(f"Enter number of working  hours in {i}"))
+    if(hours[j]>24):
+        print("Wrong Entry")
+        hours[j]=int(input(f"Please reenter number of working  hours in {i}"))
+    else:
+        pass
 _sum=sum(hours)-hours[0]-hours[6]
 pay_weekend=( hours[0] + hours[6] ) * 2.0
 for i in range(1,6):
